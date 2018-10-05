@@ -5,13 +5,19 @@ import { RouterModule } from '@angular/router';
 
 import { ROUTES } from './app.routes';
 
+import { HttpManager } from './core/httpManager';
 import { RestaurantService } from './services/restaurant.service';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
-import { RestaurantItemComponent } from './components/restaurants/restaurant-item/restaurant-item.component'
+import { RestaurantItemComponent } from './components/restaurants/restaurant-item/restaurant-item.component';
+import { RestaurantDetailsComponent } from './components/restaurants/restaurant-details/restaurant-details.component';
+import { MenuComponent } from './components/restaurants/menu/menu.component';
+import { MenuItemComponent } from './components/restaurants/menu/menu-item/menu-item.component';
+import { ReviewsComponent } from './components/restaurants/reviews/reviews.component';
 
 
 @NgModule({
@@ -20,14 +26,18 @@ import { RestaurantItemComponent } from './components/restaurants/restaurant-ite
     AboutComponent,
     HomeComponent,
     RestaurantsComponent,
-    RestaurantItemComponent
+    RestaurantItemComponent,
+    RestaurantDetailsComponent,
+    MenuComponent,
+    MenuItemComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantService],
+  providers: [HttpManager, RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

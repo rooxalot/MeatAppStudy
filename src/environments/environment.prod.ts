@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  meatAPI: 'http://localhost:3000/',
+  meatAPI: 'http://localhost:3000',
 };

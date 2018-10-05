@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  meatAPI: 'http://localhost:3000/',
+  meatAPI: 'http://localhost:3000',
 };
