@@ -7,17 +7,18 @@ import { ROUTES } from './app.routes';
 
 import { HttpManager } from './core/httpManager';
 import { RestaurantService } from './services/restaurant.service';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
-
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantItemComponent } from './components/restaurants/restaurant-item/restaurant-item.component';
 import { RestaurantDetailsComponent } from './components/restaurants/restaurant-details/restaurant-details.component';
 import { MenuComponent } from './components/restaurants/menu/menu.component';
 import { MenuItemComponent } from './components/restaurants/menu/menu-item/menu-item.component';
 import { ReviewsComponent } from './components/restaurants/reviews/reviews.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -30,14 +31,15 @@ import { ReviewsComponent } from './components/restaurants/reviews/reviews.compo
     RestaurantDetailsComponent,
     MenuComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [HttpManager, RestaurantService],
+  providers: [HttpManager, RestaurantService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

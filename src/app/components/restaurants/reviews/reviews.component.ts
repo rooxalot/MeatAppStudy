@@ -23,4 +23,20 @@ export class ReviewsComponent implements OnInit {
       .getRestaurantReviewsById(id)
       .subscribe(data => (this.reviews = data));
   }
+
+  getRatingFace(rating: number): string {
+    let ratingImage = '';
+
+    if(rating < 3.5) {
+      ratingImage = 'pissed';
+    }
+    else if (rating > 3.5 && rating <= 4){
+      ratingImage = 'soso';
+    }
+    else {
+      ratingImage = 'loved'
+    }
+
+    return `assets/img/reactions/${ratingImage}.png`;
+  }
 }
