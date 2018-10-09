@@ -38,7 +38,9 @@
   <div class="box-footer">
     <button type="button" (click)="clearCart()" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
     <div class="pull-right">
-      <a href="#" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
+      <button (click)="redirectToOrder()" [disabled]="this.getCartItens().length == 0" class="btn btn-success">
+        <i class="fa fa-credit-card"></i> Fechar Pedido
+      </button>
     </div>
   </div>
 </div>

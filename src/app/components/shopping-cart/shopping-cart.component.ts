@@ -1,6 +1,7 @@
 import { CartItem } from './../../models/cartItem.model';
 import { ShoppingCartService } from './../../services/shopping-cart.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mt-shopping-cart',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor(private cartService: ShoppingCartService) { }
+  constructor(private cartService: ShoppingCartService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,4 +32,7 @@ export class ShoppingCartComponent implements OnInit {
     return total;
   }
 
+  redirectToOrder(): void {
+    this.router.navigate(['/order']);
+  }
 }
