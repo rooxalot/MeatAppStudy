@@ -1,3 +1,4 @@
+import { PaymentService } from './../../services/payment.service';
 import { RadioOption } from './../../models/radioOption.model';
 import { CartItem } from './../../models/cartItem.model';
 import { ShoppingCartService } from './../../services/shopping-cart.service';
@@ -10,16 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  paymentOptions: RadioOption[] = [
-    new RadioOption('Dinheiro', 'DIN'),
-    new RadioOption('Cartão de Débito', 'DEB'),
-    new RadioOption('Cartão de Crédito', 'CRD'),
-    new RadioOption('Vale Refeição', 'REF'),
-  ];
+  paymentOptions: RadioOption[];
 
-  constructor(private cartService: ShoppingCartService) { }
+  constructor(private cartService: ShoppingCartService, private paymentService: PaymentService) { }
 
   ngOnInit() {
+    this.paymentService.getPaymentOptions()
+      .subscribe(data => {
+        let radioOptions = data.map(payment => new RadioOption(payment.paymentName, payment));
+        this.paymentOptions = radioOptions;
+      });
   }
 
   getItens(): CartItem[] {

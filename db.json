@@ -370,5 +370,12 @@
       "restaurantId": "tasty-treats"
     }
   ],
+  "paymentOptions": [
+    { "paymentCode": "DIN", "paymentName": "Dinheiro", "freightValue": 0 },
+    { "paymentCode": "CRD", "paymentName": "Cartão de Crédito", "freightValue": 5 },
+    { "paymentCode": "DEB", "paymentName": "Cartão de Débito", "freightValue": 2 },
+    { "paymentCode": "VR", "paymentName": "Vale Refeição", "freightValue": 7.5 },
+    { "paymentCode": "BRN", "paymentName": "Aldo", "freightValue": 99999 }
+  ],
   "orders": []
 }
