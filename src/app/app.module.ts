@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -20,6 +21,8 @@ import { MenuItemComponent } from './components/restaurants/menu/menu-item/menu-
 import { ReviewsComponent } from './components/restaurants/reviews/reviews.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrderComponent } from './components/order/order.component';
+import { InputContainerComponent } from './components/shared/input-container/input-container.component';
+import { RadioOptionComponent } from './components/shared/radio-option/radio-option.component';
 
 
 @NgModule({
@@ -34,11 +37,14 @@ import { OrderComponent } from './components/order/order.component';
     MenuItemComponent,
     ReviewsComponent,
     ShoppingCartComponent,
-    OrderComponent
+    OrderComponent,
+    InputContainerComponent,
+    RadioOptionComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [HttpManager, RestaurantService, ShoppingCartService],

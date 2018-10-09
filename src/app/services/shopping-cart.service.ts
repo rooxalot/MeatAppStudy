@@ -20,8 +20,7 @@ export class ShoppingCartService {
 
     if (!itemExists) {
       this.cartItens.push(cartItem);
-    }
-    else {
+    } else {
       this.incrementQuantity(cartItem);
     }
   }
@@ -49,6 +48,10 @@ export class ShoppingCartService {
 
     if (foundItem) {
       foundItem.quantity--;
+    }
+
+    if (foundItem.quantity <= 0) {
+      this.removeItem(foundItem);
     }
   }
 
