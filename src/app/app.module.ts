@@ -1,3 +1,4 @@
+import { OrderService } from './services/order.service';
 import { PaymentService } from './services/payment.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -48,7 +49,7 @@ import { RadioOptionComponent } from './components/shared/radio-option/radio-opt
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [HttpManager, RestaurantService, ShoppingCartService, PaymentService],
+  providers: [HttpManager, RestaurantService, ShoppingCartService, OrderService, PaymentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

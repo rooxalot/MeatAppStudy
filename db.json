@@ -371,11 +371,195 @@
     }
   ],
   "paymentOptions": [
-    { "paymentCode": "DIN", "paymentName": "Dinheiro", "freightValue": 0 },
-    { "paymentCode": "CRD", "paymentName": "Cartão de Crédito", "freightValue": 5 },
-    { "paymentCode": "DEB", "paymentName": "Cartão de Débito", "freightValue": 2 },
-    { "paymentCode": "VR", "paymentName": "Vale Refeição", "freightValue": 7.5 },
-    { "paymentCode": "BRN", "paymentName": "Aldo", "freightValue": 99999 }
+    {
+      "paymentCode": "DIN",
+      "paymentName": "Dinheiro",
+      "freightValue": 0
+    },
+    {
+      "paymentCode": "CRD",
+      "paymentName": "Cartão de Crédito",
+      "freightValue": 5
+    },
+    {
+      "paymentCode": "DEB",
+      "paymentName": "Cartão de Débito",
+      "freightValue": 2
+    },
+    {
+      "paymentCode": "VR",
+      "paymentName": "Vale Refeição",
+      "freightValue": 7.5
+    },
+    {
+      "paymentCode": "BRN",
+      "paymentName": "Aldo",
+      "freightValue": 99999
+    }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Av. Waldemar Tietz",
+      "number": "506",
+      "complement": "",
+      "paymentOption": {
+        "paymentCode": "DEB",
+        "paymentName": "Cartão de Débito",
+        "freightValue": 2
+      },
+      "total": 176.3,
+      "itens": [
+        {
+          "item": {
+            "id": "cup-cake",
+            "imagePath": "assets/img/foods/cupcake.png",
+            "name": "Cup Cake",
+            "description": "Cup Cake recheado de Doce de Leite",
+            "price": 8.7,
+            "restaurantId": "bread-bakery"
+          },
+          "quantity": 2
+        },
+        {
+          "item": {
+            "id": "bread",
+            "imagePath": "assets/img/foods/bread.png",
+            "name": "Pão Artesanal Italiano",
+            "description": "Pão artesanal com queijos italianos",
+            "price": 15.9,
+            "restaurantId": "bread-bakery"
+          },
+          "quantity": 2
+        },
+        {
+          "item": {
+            "id": "zlasagna",
+            "imagePath": "assets/img/foods/zlasagna.png",
+            "name": "Lasagna de Zucchini",
+            "description": "Lasagna deliciosa que se salva por causa do queijo",
+            "price": 14.9,
+            "restaurantId": "green-food"
+          },
+          "quantity": 1
+        },
+        {
+          "item": {
+            "id": "greensandwich",
+            "imagePath": "assets/img/foods/greensandwich.png",
+            "name": "Sanduíche de Frango",
+            "description": "Frango grelhado e salada",
+            "price": 10.5,
+            "restaurantId": "green-food"
+          },
+          "quantity": 1
+        },
+        {
+          "item": {
+            "id": "ceasar",
+            "imagePath": "assets/img/foods/ceasar.png",
+            "name": "Salada Ceasar",
+            "description": "Clássica salada ceasar.",
+            "price": 33.9,
+            "restaurantId": "green-food"
+          },
+          "quantity": 3
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Av. Waldemar Tietz",
+      "number": "506",
+      "complement": "",
+      "paymentOption": {
+        "paymentCode": "VR",
+        "paymentName": "Vale Refeição",
+        "freightValue": 7.5
+      },
+      "total": 58,
+      "itens": [
+        {
+          "item": {
+            "id": "cup-cake",
+            "imagePath": "assets/img/foods/cupcake.png",
+            "name": "Cup Cake",
+            "description": "Cup Cake recheado de Doce de Leite",
+            "price": 8.7,
+            "restaurantId": "bread-bakery"
+          },
+          "quantity": 1
+        },
+        {
+          "item": {
+            "id": "donut",
+            "imagePath": "assets/img/foods/donut.png",
+            "name": "Donut",
+            "description": "Coberto com chantilly",
+            "price": 2.5,
+            "restaurantId": "bread-bakery"
+          },
+          "quantity": 4
+        },
+        {
+          "item": {
+            "id": "bread",
+            "imagePath": "assets/img/foods/bread.png",
+            "name": "Pão Artesanal Italiano",
+            "description": "Pão artesanal com queijos italianos",
+            "price": 15.9,
+            "restaurantId": "bread-bakery"
+          },
+          "quantity": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Av. Waldemar Tietz",
+      "number": "506",
+      "complement": "",
+      "paymentOption": {
+        "paymentCode": "DEB",
+        "paymentName": "Cartão de Débito",
+        "freightValue": 2
+      },
+      "total": 49,
+      "itens": [
+        {
+          "item": {
+            "id": "fries",
+            "imagePath": "assets/img/foods/fries.png",
+            "name": "Batatas Fritas",
+            "description": "Batatas fritas crocantes",
+            "price": 5.5,
+            "restaurantId": "burger-house"
+          },
+          "quantity": 1
+        },
+        {
+          "item": {
+            "id": "coke.png",
+            "imagePath": "assets/img/foods/coke.png",
+            "name": "Refrigerante",
+            "description": "O refri mais gelado da cidade.",
+            "price": 4.5,
+            "restaurantId": "burger-house"
+          },
+          "quantity": 1
+        },
+        {
+          "item": {
+            "id": "burger",
+            "imagePath": "assets/img/foods/burger.png",
+            "name": "Classic Burger",
+            "description": "O clássico. Não tem como errar.",
+            "price": 18.5,
+            "restaurantId": "burger-house"
+          },
+          "quantity": 2
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
