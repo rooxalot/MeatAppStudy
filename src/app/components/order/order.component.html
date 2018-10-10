@@ -40,52 +40,12 @@
       <!-- Table row -->
       <div class="row">
 
-        <div class="text-center" style="margin-bottom: 3%" *ngIf="this.getItens().length == 0">
-          <span>
-            Não existem itens no seu carrinho para compra. Que tal dar uma <a [routerLink]="['/restaurants']">olhada</a> em nossos restaurantes?
-          </span>
-        </div>
-
-        <div *ngIf="this.getItens().length > 0">
-          <div class="col-xs-12">
-            <p class="lead">Itens do Pedido:</p>
-          </div>
-          <div class="col-xs-12 table-responsive">
-
-            <table class="table table-striped">
-              <thead>
-
-                <tr>
-                  <th class="text-center">Quantidade</th>
-                  <th>Item</th>
-                  <th>Descrição</th>
-                  <th class="text-right">Preço Unit.</th>
-                  <th class="text-right">Subtotal</th>
-                  <th class="text-right"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let cartItem of this.getItens()">
-                  <td class="text-center">
-                    <a class="btn btn-sm" (click)="decrementQuantity(cartItem)"><i class="fa fa-minus"></i></a>
-                    {{ cartItem.quantity }}
-                    <a class="btn btn-sm" (click)="incrementQuantity(cartItem)"><i class="fa fa-plus"></i></a>
-                  </td>
-                  <td>{{ cartItem.item.name }}</td>
-
-                  <td>{{ cartItem.item.description }}</td>
-                  <td class="text-right">{{ cartItem.item.price | currency: 'BRL': true }}</td>
-                  <td class="text-right">{{ cartItem.getPrice() | currency: 'BRL': true }}</td>
-                  <td class="text-right">
-                    <a class="btn btn-sm danger" (click)="removeItem(cartItem)"><i class="fa fa-remove"></i></a>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-          <!-- /.col -->
-        </div>
+        <mt-order-itens 
+          [orderItens]="this.getItens()"
+          (emitIncrement)="this.incrementQuantity($event)"
+          (emitDecrement)="this.decrementQuantity($event)"
+          (emitRemove)="this.removeItem($event)">
+        </mt-order-itens>
 
       </div>
       <!-- /.row -->
@@ -95,7 +55,11 @@
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Formas de Pagamento:</p>
 
-          <mt-radio-option required name="paymentOption" ngModel [options]="paymentOptions">
+          <mt-radio-option 
+            [options]="paymentOptions"
+            ngModel
+            required 
+            name="paymentOption">
           </mt-radio-option>
 
         </div>

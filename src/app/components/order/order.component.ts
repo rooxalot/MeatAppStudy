@@ -1,3 +1,4 @@
+import { MessageService } from './../../services/message.service';
 import { Order } from "./../../models/order.model";
 import { PaymentOption } from "./../../models/paymentOption.model";
 import { OrderService } from "./../../services/order.service";
@@ -18,10 +19,11 @@ export class OrderComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private messageService: MessageService,
     private cartService: ShoppingCartService,
     private orderService: OrderService,
     private paymentService: PaymentService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.paymentService.getPaymentOptions().subscribe(data => {
@@ -70,7 +72,8 @@ export class OrderComponent implements OnInit {
     this.orderService.checkoutOrder(order).subscribe(data => {
       if (data.id) {
         this.cartService.clearCart();
-        this.router.navigate(['/']);
+        this.messageService.showSuccess('Seu pedido foi concluído com sucesso!!');
+        this.router.navigate(['/order-summary']);
       }
     });
   }

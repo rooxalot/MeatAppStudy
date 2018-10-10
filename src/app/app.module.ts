@@ -1,16 +1,20 @@
-import { OrderService } from './services/order.service';
-import { PaymentService } from './services/payment.service';
+
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 import { ROUTES } from './app.routes';
 
 import { HttpManager } from './core/httpManager';
+import { MessageService } from './services/message.service';
 import { RestaurantService } from './services/restaurant.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
+import { OrderService } from './services/order.service';
+import { PaymentService } from './services/payment.service';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -25,6 +29,9 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { OrderComponent } from './components/order/order.component';
 import { InputContainerComponent } from './components/shared/input-container/input-container.component';
 import { RadioOptionComponent } from './components/shared/radio-option/radio-option.component';
+import { OrderItensComponent } from './components/order/order-itens/order-itens.component';
+import { OrderSummaryComponent } from './components/order/order-summary/order-summary.component';
+import { StarRatingComponent } from './components/shared/star-rating/star-rating.component';
 
 
 @NgModule({
@@ -41,15 +48,20 @@ import { RadioOptionComponent } from './components/shared/radio-option/radio-opt
     ShoppingCartComponent,
     OrderComponent,
     InputContainerComponent,
-    RadioOptionComponent
+    RadioOptionComponent,
+    OrderItensComponent,
+    OrderSummaryComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     FormsModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [HttpManager, RestaurantService, ShoppingCartService, OrderService, PaymentService],
+  providers: [HttpManager, MessageService, RestaurantService, ShoppingCartService, OrderService, PaymentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

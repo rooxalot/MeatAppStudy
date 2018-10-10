@@ -4,6 +4,12 @@ body {
   color: #555;
 }
 
+.skin-purple .main-header .navbar {
+  background-color: #3b2ea3 !important;
+}
+
+
+
 .box-header {
   color: inherit;
 }

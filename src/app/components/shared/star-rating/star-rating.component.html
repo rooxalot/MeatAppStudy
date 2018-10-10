@@ -1,0 +1,8 @@
+<p>
+  <i *ngFor="let star of this.starCountArray" 
+    style="cursor: pointer; margin: 1%" 
+    class="fa fa-star"
+    [class.fa-star]="this.isSelected(star)"
+    [class.fa-star-o]="!this.isSelected(star)"
+    (click)="setStarCount(star)"></i>
+</p>
